@@ -15,5 +15,5 @@ func main() {
     default:
         fmt.Printf("%s.\n", os)
     }
-    fmt.Printf("We have %d CPUs", runtime.NumCPU())
+    fmt.Printf("We have %d CPUs\n", runtime.NumCPU())
 }
