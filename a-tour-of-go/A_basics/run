@@ -1,1 +1,5 @@
-docker build -t a-tour-of-go/flowcontrol . && docker run --rm a-tour-of-go/flowcontrol $1
+#!/bin/bash
+dir_name=$(dirname $(realpath --relative-to=.. $0))
+image_name=${dir_name,,}
+
+docker build -t a-tour-of-go/$image_name . && docker run --rm a-tour-of-go/$image_name $1
