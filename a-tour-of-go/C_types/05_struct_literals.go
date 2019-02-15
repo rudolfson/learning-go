@@ -15,5 +15,7 @@ var (
 )
 func main() {
     fmt.Println(v1, v2, v3, p)
+    p = &v1
+    fmt.Println(p)
 }
 
