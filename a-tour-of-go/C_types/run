@@ -1,6 +1,4 @@
 #!/bin/bash
-dir_name=$(dirname $(realpath --relative-to=.. $0))
-image_name=${dir_name,,}
-executable=${1%%.go}
-
-docker build -t a-tour-of-go/$image_name . && docker run --rm a-tour-of-go/$image_name $executable
+image=$(docker build --quiet --build-arg source_file=$1 .)
+docker run --rm $image
+docker rmi $image > /dev/null
